@@ -1,0 +1,25 @@
+# === Pastas de Compilação do .NET (Gera lixo a cada build) ===
+bin/
+obj/
+
+# === Arquivos do Visual Studio Code ===
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# === Arquivos do Visual Studio Community/Professional ===
+.vs/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# === Arquivos de Sistema (Mac e Windows) ===
+.DS_Store
+Thumbs.db
+
+# === Logs e Cache ===
+*.log
+.eslintcache

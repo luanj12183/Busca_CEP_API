@@ -1,0 +1,91 @@
+@model Busca_Endere_os.Models.EnderecoViewModel
+
+@{
+    ViewData["Title"] = "Buscar Endereço";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm" style="max-width: 600px; margin: auto;">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">🔍 Busca de CEP (ViaCEP + Model Binding)</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Buscar" method="post">
+                <div class="mb-3">
+                    <label asp-for="Cep" class="form-label">Digite o CEP</label>
+                    <input asp-for="Cep" id="cep" class="form-control" placeholder="00000-000" required />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Logradouro" class="form-label">Logradouro</label>
+                    <input asp-for="Logradouro" id="logradouro" class="form-control" readonly required />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Bairro" class="form-label">Bairro</label>
+                    <input asp-for="Bairro" id="bairro" class="form-control" readonly required />
+                </div>
+                <div class="row">
+                    <div class="col-md-8 mb-3">
+                        <label asp-for="Localidade" class="form-label">Cidade</label>
+                        <input asp-for="Localidade" id="cidade" class="form-control" readonly required />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="Uf" class="form-label">UF</label>
+                        <input asp-for="Uf" id="uf" class="form-control" readonly required />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Numero" class="form-label">Número</label>
+                    <input asp-for="Numero" class="form-control" placeholder="Ex: 123" required />
+                </div>
+
+                <button type="submit" class="btn btn-success w-100">Enviar para o Servidor</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#cep').on('blur', function () {
+                var cep = $(this).val().replace(/\D/g, '');
+
+                if (cep !== "") {
+                    var validacep = /^[0-9]{8}$/;
+
+                    if(validacep.test(cep)) {
+                        $('#logradouro').val('Buscando...');
+                        $('#bairro').val('Buscando...');
+                        $('#cidade').val('Buscando...');
+                        $('#uf').val('...');
+
+                        // Consulta o ViaCEP usando AJAX
+                        $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
+                            if (!("erro" in dados)) {
+                                $('#logradouro').val(dados.logradouro);
+                                $('#bairro').val(dados.bairro);
+                                $('#cidade').val(dados.localidade);
+                                $('#uf').val(dados.uf);
+                            } else {
+                                alert("CEP não encontrado.");
+                                limpaFormulario();
+                            }
+                        });
+                    } else {
+                        alert("Formato de CEP inválido.");
+                        limpaFormulario();
+                    }
+                }
+            });
+
+            function limpaFormulario() {
+                $('#cep').val('');
+                $('#logradouro').val('');
+                $('#bairro').val('');
+                $('#cidade').val('');
+                $('#uf').val('');
+            }
+        });
+    </script>
+}
