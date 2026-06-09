@@ -1,0 +1,51 @@
+@model Busca_CEP_API.Models.EnderecoViewModel
+
+@{
+    ViewData["Title"] = "Dados Confirmados";
+}
+
+<div class="container mt-5">
+        <div class="card border-success shadow-sm">
+            <div class="card-header bg-success text-white">
+                <h3 class="card-title mb-0">Endereço Processado Pelo Servidor</h3>
+            </div>
+            <div class="card-body bg-light">
+                <p class="lead">Os Dados foram Recebidos com Sucesso!:</p>
+
+                <table class="table table-bordered table-striped mt-4">
+                    <thead class="table-dark">
+                    <tr>
+                        <th style="width: 30%;">Campo</th>
+                        <th> Dado Recebido (Somente Leitura)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Rua/Logradouro</strong></td>
+                        <td>@Model.Logradouro</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bairro</strong></td>
+                        <td>@Model.Bairro</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cidade</strong></td>
+                        <td>@Model.Cidade</td>
+                    </tr>
+                    <tr>
+                        <td><strong>UF</strong></td>
+                        <td>@Model.Uf</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Número Informado</strong></td>
+                        <td><span class="badge bg-primary fs-6">@Model.Numero</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="mt-4">
+                <a asp-action="Buscar" class="btn btn-secondary">Realizar Nova Busca</a>
+            </div>
+        </div>
+    </div>
+</div>
