@@ -16,7 +16,7 @@
                         <div class="input-group">
                             <input type="text" id="txtCep" class="form-control" placeholder="00000-000" maxlength="9"/>
                             <button type="button" id="btnBuscar" class="btn btn-success">
-                                <i class="fas fa-search"><i> Buscar 
+                                <i class="fas fa-search"></i> Buscar 
                             </button>
                         </div>
                         <span id="erroCep" class="text-danger small" style="display:none;">CEP inválido ou não encontrado.</span>
@@ -64,11 +64,11 @@
                         $.getJSON('https://viacep.com.br/ws/' + cep + '/json/', function (dados) {
                             if (!("erro" in dados)) {
                                 
-                            $('#txtLogradouro').val(dados.Logradouro);
-                            $('#txtBairro').val(dados.Bairro); 
-                            $('txtCidade').val(dados.Localidade);
-                            $('txtUf').val(dados.Uf);
-                            $('txtNumero').focus();
+                            $('#txtLogradouro').val(dados.logradouro);
+                            $('#txtBairro').val(dados.bairro); 
+                            $('#txtCidade').val(dados.localidade);
+                            $('#txtUf').val(dados.uf);
+                            $('#txtNumero').focus();
                         } else {
                             LimparCampos();
                             $('#erroCep').text('CEP não encontrado').show();
