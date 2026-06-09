@@ -1,5 +1,4 @@
-cat <<'EOF'> Models/EnderecoViewModel.cs
-namespace Busca_CEP_API.Models;
+ namespace Busca_CEP_API.Models;
 
 public class EnderecoViewModel
 {
@@ -10,4 +9,3 @@ public class EnderecoViewModel
     public string Uf { get; set; }
     public string Numero { get; set; }
 }
-EOF 
