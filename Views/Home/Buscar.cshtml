@@ -4,27 +4,28 @@
     ViewData["Title"] = "Buscar Endereço";
 }
 
-    <div class="container mt-5">
-        <div class="card shadow-sm">
-            <div class="card-header bg-primary text-white">
-                <h3 class="card-title mb-0">Buscar Endereço por CEP</h3>
-            </div>
-            <div class="card-body">
-                <div class="row mb-4">
-                    <div class="col-md-4">
-                        <label for="txtCep" class="form-label font-weight-bold">Digite o CEP:</label>
-                        <div class="input-group">
-                            <input type="text" id="txtCep" class="form-control" placeholder="00000-000" maxlength="9"/>
-                            <button type="button" id="btnBuscar" class="btn btn-success">
-                                <i class="fas fa-search"></i> Buscar 
-                            </button>
-                        </div>
-                        <span id="erroCep" class="text-danger small" style="display:none;">CEP inválido ou não encontrado.</span>
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h3 class="card-title mb-0">Buscar Endereço por CEP</h3>
+        </div>
+        <div class="card-body">
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <label for="txtCep" class="form-label font-weight-bold">Digite o CEP:</label>
+                    <div class="input-group">
+                        <input type="text" id="txtCep" class="form-control" placeholder="00000-000" maxlength="9"/>
+                        <button type="button" id="btnBuscar" class="btn btn-success">
+                            <i class="fas fa-search"></i> Buscar 
+                        </button>
                     </div>
+                    <span id="erroCep" class="text-danger small" style="display:none;">CEP inválido ou não encontrado.</span>
                 </div>
+            </div>
 
-                <hr>
-
+            <hr>
+            
+            <form asp-controller="Home" asp-action="Buscar" method="post">
                 <div class="row g-3">
                     <div class="col-md-6">
                         <label asp-for="Logradouro" class="form-label">Rua/Logradouro</label>
@@ -46,24 +47,30 @@
                         <label asp-for="Numero" class="form-label">Número (Opcional)</label>
                         <input asp-for="Numero" id="txtNumero" class="form-control" placeholder="Digite o número"/>
                     </div>
-                </div>
-            </div>
+                </div> 
+                
+                <div class="row mt-4">
+                    <div class="col-12 text-end">
+                        <button type="submit" class="btn btn-primary btn-lg">Avançar para o resultado</button>
+                    </div>
+                </div>      
+            </form>
         </div>
     </div>
+</div>
 
-    @section Scripts {
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#btnBuscar').click(function () {
-                    var cep = $('#txtCep').val().replace(/\D/g, '');
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btnBuscar').click(function () {
+                var cep = $('#txtCep').val().replace(/\D/g, '');
 
-                    if (cep.length === 8) {
-                        $('#erroCep').hide();
+                if (cep.length === 8) {
+                    $('#erroCep').hide();
 
-                        $.getJSON('https://viacep.com.br/ws/' + cep + '/json/', function (dados) {
-                            if (!("erro" in dados)) {
-                                
+                    $.getJSON('https://viacep.com.br/ws/' + cep + '/json/', function (dados) {
+                        if (!("erro" in dados)) {
                             $('#txtLogradouro').val(dados.logradouro);
                             $('#txtBairro').val(dados.bairro); 
                             $('#txtCidade').val(dados.localidade);
@@ -77,18 +84,18 @@
                         LimparCampos();
                         $('#erroCep').text('Erro ao buscar o CEP. Tente novamente.').show();
                     });
-                    } else {
-                        LimparCampos();
-                        $('#erroCep').text('Digite um CEP válido com 8 digítos.').show();
-                    }
-                });
-                
-                function LimparCampos() {
-                    $('#txtLogradouro').val('');
-                    $('#txtBairro').val('');
-                    $('#txtCidade').val('');
-                    $('#txtUf').val('');
+                } else {
+                    LimparCampos();
+                    $('#erroCep').text('Digite um CEP válido com 8 digítos.').show();
                 }
             });
-        </script>
-    }
+            
+            function LimparCampos() {
+                $('#txtLogradouro').val('');
+                $('#txtBairro').val('');
+                $('#txtCidade').val('');
+                $('#txtUf').val('');
+            }
+        });
+    </script>
+}
