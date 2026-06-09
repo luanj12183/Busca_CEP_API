@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Busca_CEP_API/1.0.0": {
+        "runtime": {
+          "Busca_CEP_API.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Busca_CEP_API/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

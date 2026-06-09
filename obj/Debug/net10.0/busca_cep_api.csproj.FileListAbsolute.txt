@@ -1,0 +1,9 @@
+/workspaces/Busca_Endere-os/obj/Debug/net10.0/rpswa.dswa.cache.json
+/workspaces/Busca_Endere-os/obj/Debug/net10.0/busca_cep_api.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/Busca_Endere-os/obj/Debug/net10.0/busca_cep_api.AssemblyInfoInputs.cache
+/workspaces/Busca_Endere-os/obj/Debug/net10.0/busca_cep_api.AssemblyInfo.cs
+/workspaces/Busca_Endere-os/obj/Debug/net10.0/busca_cep_api.csproj.CoreCompileInputs.cache
+/workspaces/Busca_Endere-os/obj/Debug/net10.0/busca_cep_api.MvcApplicationPartsAssemblyInfo.cache
+/workspaces/Busca_Endere-os/obj/Debug/net10.0/busca_cep_api.RazorAssemblyInfo.cache
+/workspaces/Busca_Endere-os/obj/Debug/net10.0/busca_cep_api.RazorAssemblyInfo.cs
+/workspaces/Busca_Endere-os/obj/Debug/net10.0/busca_cep_api.sourcelink.json

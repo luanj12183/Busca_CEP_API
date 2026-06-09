@@ -1,0 +1,5 @@
+@model Busca_CEP_API.Models.EnderecoViewModel
+<div class="container mt-4">
+    <h2>Buscar Endereço</h2>
+    <p>O arquivo está configurado corretamente!</p>
+</div>

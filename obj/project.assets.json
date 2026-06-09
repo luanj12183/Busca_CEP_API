@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/workspaces/Busca_Endere-os/Busca_Endere-os.csproj",
-      "projectName": "Busca_Endere-os",
-      "projectPath": "/workspaces/Busca_Endere-os/Busca_Endere-os.csproj",
+      "projectUniqueName": "/workspaces/Busca_Endere-os/Busca_CEP_API.csproj",
+      "projectName": "Busca_CEP_API",
+      "projectPath": "/workspaces/Busca_Endere-os/Busca_CEP_API.csproj",
       "packagesPath": "/home/codespace/.nuget/packages/",
       "outputPath": "/workspaces/Busca_Endere-os/obj/",
       "projectStyle": "PackageReference",
