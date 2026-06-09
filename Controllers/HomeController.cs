@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Busca_Endere_os.Models;
+using Busca_CEP_API.Models;
 
-namespace Busca_Endere_os.Controllers;
+namespace Busca_CEP_API.Controllers;
 
 public class HomeController : Controller
 {
