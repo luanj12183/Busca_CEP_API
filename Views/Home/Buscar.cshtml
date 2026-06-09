@@ -26,6 +26,8 @@
             <hr>
             
             <form asp-controller="Home" asp-action="Buscar" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input type="hidden" asp-for="Cep" id="hdnCep"/>
                 <div class="row g-3">
                     <div class="col-md-6">
                         <label asp-for="Logradouro" class="form-label">Rua/Logradouro:</label>
@@ -75,6 +77,7 @@
                             $('#txtBairro').val(dados.bairro); 
                             $('#txtCidade').val(dados.localidade);
                             $('#txtUf').val(dados.uf);
+                            $('#hdnCep').val(cep);
                             $('#txtNumero').focus();
                         } else {
                             LimparCampos();
@@ -95,6 +98,7 @@
                 $('#txtBairro').val('');
                 $('#txtCidade').val('');
                 $('#txtUf').val('');
+                $('#hdnCep').val('');
             }
         });
     </script>
