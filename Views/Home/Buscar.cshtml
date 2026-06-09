@@ -52,4 +52,43 @@
     </div>
 
     @section Scripts {
-        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#btnBuscar').click(function () {
+                    var cep = $('#txtCep').val().replace(/\D/g, '');
+
+                    if (cep.length === 8) {
+                        $('#erroCep').hide();
+
+                        $.getJSON('https://viacep.com.br/ws/' + cep + '/json/', function (dados) {
+                            if (!("erro" in dados)) {
+                                
+                            $('#txtLogradouro').val(dados.Logradouro);
+                            $('#txtBairro').val(dados.Bairro); 
+                            $('txtCidade').val(dados.Localidade);
+                            $('txtUf').val(dados.Uf);
+                            $('txtNumero').focus();
+                        } else {
+                            LimparCampos();
+                            $('#erroCep').text('CEP não encontrado').show();
+                        }
+                    }).fail(function () {
+                        LimparCampos();
+                        $('#erroCep').text('Erro ao buscar o CEP. Tente novamente.').show();
+                    });
+                    } else {
+                        LimparCampos();
+                        $('#erroCep').text('Digite um CEP válido com 8 digítos.').show();
+                    }
+                });
+                
+                function LimparCampos() {
+                    $('#txtLogradouro').val('');
+                    $('#txtBairro').val('');
+                    $('#txtCidade').val('');
+                    $('#txtUf').val('');
+                }
+            });
+        </script>
+    }
