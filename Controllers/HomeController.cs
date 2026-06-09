@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using Busca_CEP_API.Models;
 
 namespace Busca_CEP_API.Controllers;
