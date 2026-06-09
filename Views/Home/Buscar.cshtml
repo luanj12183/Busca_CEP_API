@@ -1,6 +1,55 @@
 @model Busca_CEP_API.Models.EnderecoViewModel
 
-<div class="container mt-4">
-    <h2>Buscar Endereço</h2>
-    <p>O arquivo está configurado corretamente</p>
-</div>
+@{
+    ViewData["Title"] = "Buscar Endereço";
+}
+
+    <div class="container mt-5">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h3 class="card-title mb-0">Buscar Endereço por CEP</h3>
+            </div>
+            <div class="card-body">
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <label for="txtCep" class="form-label font-weight-bold">Digite o CEP:</label>
+                        <div class="input-group">
+                            <input type="text" id="txtCep" class="form-control" placeholder="00000-000" maxlength="9"/>
+                            <button type="button" id="btnBuscar" class="btn btn-success">
+                                <i class="fas fa-search"><i> Buscar 
+                            </button>
+                        </div>
+                        <span id="erroCep" class="text-danger small" style="display:none;">CEP inválido ou não encontrado.</span>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label asp-for="Logradouro" class="form-label">Rua/Logradouro</label>
+                        <input asp-for="Logradouro" id="txtLogradouro" class="form-control" readonly/>
+                    </div>
+                    <div class="col-md-6"> 
+                        <label asp-for="Bairro" class="form-label">Bairro</label>
+                        <input asp-for="Bairro" id="txtBairro" class="form-control" readonly/>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Cidade" class="form-label">Cidade</label>
+                        <input asp-for="Cidade" id="txtCidade" class="form-control" readonly/>
+                    </div>
+                    <div class="col-md-2">
+                        <label asp-for="Uf" class="form-label">UF</label>
+                        <input asp-for="Uf" id="txtUf" class="form-control" readonly/>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="Numero" class="form-label">Número (Opcional)</label>
+                        <input asp-for="Numero" id="txtNumero" class="form-control" placeholder="Digite o número"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        
