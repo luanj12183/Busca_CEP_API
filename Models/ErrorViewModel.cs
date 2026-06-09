@@ -1,4 +1,4 @@
-namespace Busca_Endere_os.Models;
+namespace Busca_CEP_API.Models;
 
 public class ErrorViewModel
 {
