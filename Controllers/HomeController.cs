@@ -15,12 +15,12 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult Buscar(EnderecoViewModel model)
     {
-        if (!ModelState.IsValid)
-        {
-            return View(model);
-        }
+       // if (!ModelState.IsValid)
+        //{
+         //   return View(model);
+        //}
 
-        return RedirectToAction("Resultado", model);
+        return View ("Resultado", model);
     }
 
     [HttpGet]
