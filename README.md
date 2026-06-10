@@ -1,12 +1,12 @@
 - 📍 Busca CEP API - AspNet Core MVC
 
-Um sistema completo desenvolvido em C# com (ASP.NET) (Core MVC) que realiza a busca de endereços em tempo real sendo executado pela API (ViaCEP), integrando tecnologias no Front-End (jQuery/AJAX) e Back-End (Model Binding e Validation). Junto de uma interface responsiva e que irá salvar os dados encontrados em uma nova aba com as informações listadas em formato semelhante ao de uma tabela.
+Um sistema completo desenvolvido em C# com (ASP.NET) (Core MVC) que realiza a busca de endereços em tempo real sendo executado pela API (ViaCEP), integrando tecnologias no Front-End (jQuery/AJAX) e Back-End (Model Binding e Validation). Junto de uma interface responsiva e que irá salvar os dados encontrados em uma nova aba com as informações listadas em formato semelhante ao de uma tabela. Caso os dados não sejam corretamente preenchidos ou falte alguma informação dentro delas, a aplicação foi configurada para que não envie dados para sua outra janela e apontando os erros, assim trazendo segurança para seus dados e burlando qualquer tentativa de manipulação de informações. O preenchimento do "número" ficou como opcional já que a própria API não consegue trazer esse tipo de informação automaticamente dentro de sua plataforma.
 
 - 🛠️ Tecnologias Utilizadas dentro da Aplicação do Projeto
 
-Back-End:** .NET 8 / C# (ASP.NET Core MVC)
-Front-End:** HTML5, CSS3, Bootstrap 5, FontAwesome
-Scripts & Integração:** jQuery, AJAX, API ViaCEP
+Back-End: .NET 8 / C# (ASP.NET Core MVC)
+Front-End: HTML5, CSS3, Bootstrap 5, FontAwesome
+Scripts & Integração: jQuery, AJAX, API ViaCEP
 
 - 📸 Prints da Interface e suas funcionalidades
 
