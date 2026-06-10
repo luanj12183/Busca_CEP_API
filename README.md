@@ -8,12 +8,6 @@ Back-End: .NET 8 / C# (ASP.NET Core MVC)
 Front-End: HTML5, CSS3, Bootstrap 5, FontAwesome
 Scripts & Integração: jQuery, AJAX, API ViaCEP
 
-- 📸 Prints da Interface e suas funcionalidades
-
-<img src="./Imagens.png/Interface_Apontando_Erros.png" alt="Busca de CEP - Erros" width="400">
-<img src="./Imagens.png/Interface_Preenchida.png" alt="Busca de CEP - Preenchido" width="400">
-<img src="./Imagens.png/Interface_Dados_Registrados.png" alt="Busca de CEP - Resultado" width="400">
-
 - 📐 Arquitetura do Projeto (Padrão MVC)
 
 O projeto cumpre estritamente o padrão de arquitetura **Model-View-Controller**:
@@ -21,3 +15,9 @@ O projeto cumpre estritamente o padrão de arquitetura **Model-View-Controller**
 * Model (`EnderecoViewModel.cs`): Define a estrutura dos dados do endereço e as regras de validação (`[Required]` e propriedades anuláveis `?`).
 * View (`Buscar.cshtml` e `Resultado.cshtml`): Telas de interação com o usuário, utilizando Razor Pages e injeção de scripts para consumo da API.
 * Controller (`HomeController.cs`): Gerencia as requisições HTTP (`GET` e `POST`), valida o estado do modelo e direciona o fluxo das páginas.
+
+- 📸 Prints da Interface e suas funcionalidades
+
+<img src="./Imagens.png/Interface_Apontando_Erros.png" alt="Busca de CEP - Erros" width="400">
+<img src="./Imagens.png/Interface_Preenchida.png" alt="Busca de CEP - Preenchido" width="400">
+<img src="./Imagens.png/Interface_Dados_Registrados.png" alt="Busca de CEP - Resultado" width="400"> 
