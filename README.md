@@ -10,11 +10,9 @@ Scripts & Integração:** jQuery, AJAX, API ViaCEP
 
 - 📸 Prints da Interface e suas funcionalidades
 
-<img src="./Imagens.png/Interface_Apontando_Erros.png" alt= "Busca de CEP - Quando você digitar dados em branco e tentar enviar para buscá-los, aparecerá indicadores de erro Ex: (Cidade obrigatória)." width="400px">
-
-<img src="./Imagens.png/Interface_Preenchida.png" alt= "Busca de CEP - Quando você digitar os dados corretos e com o formato conforme o padrão solicita, nenhuma marcação de erro aparecerá." width="400px">
-
-<img src="./Imagens.png/Interface_Dados_Registrados.png" alt= "Busca de CEP - Quando você digitar os dados corretos e clicar no botão (Avançar para o Resultado). uma nova janela será exibida com os dados listados que foram encontrados através da API ViaCEP." width="400px">
+<img src="./Imagens.png/Interface_Apontando_Erros.png" alt="Busca de CEP - Erros" width="400">
+<img src="./Imagens.png/Interface_Preenchida.png" alt="Busca de CEP - Preenchido" width="400">
+<img src="./Imagens.png/Interface_Dados_Registrados.png" alt="Busca de CEP - Resultado" width="400">
 
 - 📐 Arquitetura do Projeto (Padrão MVC)
 
