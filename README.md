@@ -10,7 +10,7 @@ Scripts & Integração: jQuery, AJAX, API ViaCEP
 
 - 📐 Arquitetura do Projeto (Padrão MVC)
 
-O projeto cumpre estritamente o padrão de arquitetura **Model-View-Controller**:
+O projeto cumpre o padrão de arquitetura **Model-View-Controller**:
 
 * Model (`EnderecoViewModel.cs`): Define a estrutura dos dados do endereço e as regras de validação (`[Required]` e propriedades anuláveis `?`).
 * View (`Buscar.cshtml` e `Resultado.cshtml`): Telas de interação com o usuário, utilizando Razor Pages e injeção de scripts para consumo da API.
